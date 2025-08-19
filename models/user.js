@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const SALT_ROUNDS = 6;
 
@@ -35,5 +35,6 @@ userSchema.pre('save', async function(next) {
   // the password is either new, or being updated
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
 });
+
 
 module.exports = mongoose.model('User', userSchema);
