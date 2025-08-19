@@ -5,6 +5,7 @@
   "engines": { "node": "20.x" },
   "proxy": "http://localhost:3001",
   "scripts": {
+    "seed": "node seed.js",
     "server": "node server.js",
     "client": "react-scripts start",
     "dev": "concurrently \"npm:server\" \"npm:client\"",
@@ -30,3 +31,4 @@
     "concurrently": "8.2.2"
   }
 }
+
