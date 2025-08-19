@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 
 require('dotenv').config();
@@ -14,8 +13,12 @@ app.use(logger('dev'));
 // Content-Type: 'application/json'
 // and put that data on req.body
 app.use(express.json());
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, 'build')));
+
+// Configure both serve favicon and static files when built
+if (process.env.NODE_ENV === 'production') {
+  // Serve static files from the build folder
+  app.use(express.static(path.join(__dirname, 'build')));
+}
 
 // middleware that adds the user object from a JWT to req.user
 app.use(require('./config/checkToken'));
@@ -23,11 +26,10 @@ app.use(require('./config/checkToken'));
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'));
 
-// Protect all routes in the items router
+// Protect all routes in the items and orders routers
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
-
 
 // "catch-all" route that will match all GET requests
 // that don't match an API route defined above
