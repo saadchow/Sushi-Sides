@@ -2,32 +2,57 @@
   width: 100%;
   display: grid;
   grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
-  padding: 1vmin 0;
-  color: var(--text-light);
-  background-color: var(--white);
-  border-top: .1vmin solid var(--tan-3);
+  padding: 16px 0;
+  color: var(--muted);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
   font-size: 1.5vw;
+  transition: background-color 0.2s ease;
+}
+
+.LineItem:hover {
+  background: rgba(239, 68, 68, 0.02);
 }
 
 .LineItem:last-child {
-  border-bottom: .1vmin solid var(--tan-3);
+  border-bottom: 1px solid var(--border);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.LineItem:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .LineItem .qty {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1.4vw;
+  font-weight: 600;
+  gap: 8px;
 }
 
 .LineItem .ext-price {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1.4vw;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .LineItem button {
   margin: 0;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: var(--surface);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
 }
-
