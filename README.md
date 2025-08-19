@@ -20,7 +20,7 @@
 
 ## About The Project 📝
 
-![Project Screenshot](docs/screenshots/hero.png)
+![Project Screenshot](https://i.imgur.com/ruptl7T.png)
 
 **Sushi & Sides** is a small MERN app that showcases a classic authenticated ordering flow:
 - Sign up / log in (JWT)
@@ -76,3 +76,4 @@ Visit **[sushiandsides.onrender.com](https://sushiandsides.onrender.com/)**, cre
 ```bash
 git clone https://github.com/saadchow/Sushi-Sides.git
 cd Sushi-Sides
+
