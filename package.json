@@ -1,4 +1,7 @@
 {
+  "engines": { "node": "20.x" }
+}
+{
   "name": "sushi-and-sides",
   "version": "1.0.0",
   "description": "Modern sushi restaurant ordering system built with MERN stack",
@@ -47,3 +50,4 @@
     ]
   }
 }
+
