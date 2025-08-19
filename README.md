@@ -48,18 +48,16 @@ The goal is to demonstrate clean, production-ready structure without complex ext
 ## App Overview 📱
 
 ### Browse Menu by Category
-![Browse Menu](docs/screenshots/menu.png)
+![Browse Menu](https://i.imgur.com/1F5AfCR.png)
 
 ### Add to Cart & Update Quantities
-![Cart](docs/screenshots/cart.png)
+![Cart](https://i.imgur.com/IsYLQxK.png)
 
 ### Checkout
-![Checkout](docs/screenshots/checkout.png)
+![Checkout](https://i.imgur.com/MJE1ftJ.png)
 
 ### Order History
-![Order History](docs/screenshots/history.png)
-
-> 📸 Screenshot paths use `docs/screenshots/*.png`. Replace these images with your own or update the links as needed.
+![Order History](https://i.imgur.com/UsgAVH6.png)
 
 ## Getting Started 🌱
 
@@ -76,4 +74,5 @@ Visit **[sushiandsides.onrender.com](https://sushiandsides.onrender.com/)**, cre
 ```bash
 git clone https://github.com/saadchow/Sushi-Sides.git
 cd Sushi-Sides
+
 
