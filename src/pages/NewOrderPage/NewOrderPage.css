@@ -3,8 +3,11 @@
   display: grid;
   grid-template-columns: 1.6fr 3.5fr 3fr;
   grid-template-rows: 1fr;
-  background-color: var(--white);
-  border-radius: 2vmin;
+  gap: 16px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
 }
 
 .NewOrderPage aside {
@@ -12,5 +15,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 3vmin 2vmin;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
 }
