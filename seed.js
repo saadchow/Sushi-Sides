@@ -4,48 +4,64 @@ require('./config/database');
 const Category = require('./models/category');
 const Item = require('./models/item');
 
-// Pattern:  IIFE
+// Pattern: IIFE (Immediately Invoked Function Expression)
 (async function() {
+  console.log('🍣 Seeding Sushi & Sides database...');
 
   await Category.deleteMany({});
   const categories = await Category.create([
-    {name: 'Sandwiches', sortOrder: 10},
-    {name: 'Seafood', sortOrder: 20},
-    {name: 'Mexican', sortOrder: 30},
-    {name: 'Italian', sortOrder: 40},
-    {name: 'Sides', sortOrder: 50},
-    {name: 'Desserts', sortOrder: 60},
-    {name: 'Drinks', sortOrder: 70},
+    { name: 'Rolls', sortOrder: 10 },
+    { name: 'Nigiri', sortOrder: 20 },
+    { name: 'Bowls & Bento', sortOrder: 30 },
+    { name: 'Sides', sortOrder: 40 },
+    { name: 'Desserts', sortOrder: 50 },
+    { name: 'Drinks', sortOrder: 60 },
   ]);
 
   await Item.deleteMany({});
   const items = await Item.create([
-    {name: 'Hamburger', emoji: '🍔', category: categories[0], price: 5.95},
-    {name: 'Turkey Sandwich', emoji: '🥪', category: categories[0], price: 6.95},
-    {name: 'Hot Dog', emoji: '🌭', category: categories[0], price: 3.95},
-    {name: 'Crab Plate', emoji: '🦀', category: categories[1], price: 14.95},
-    {name: 'Fried Shrimp', emoji: '🍤', category: categories[1], price: 13.95},
-    {name: 'Whole Lobster', emoji: '🦞', category: categories[1], price: 25.95},
-    {name: 'Taco', emoji: '🌮', category: categories[2], price: 1.95},
-    {name: 'Burrito', emoji: '🌯', category: categories[2], price: 4.95},
-    {name: 'Pizza Slice', emoji: '🍕', category: categories[3], price: 3.95},
-    {name: 'Spaghetti', emoji: '🍝', category: categories[3], price: 7.95},
-    {name: 'Garlic Bread', emoji: '🍞', category: categories[3], price: 1.95},
-    {name: 'French Fries', emoji: '🍟', category: categories[4], price: 2.95},
-    {name: 'Green Salad', emoji: '🥗', category: categories[4], price: 3.95},
-    {name: 'Ice Cream', emoji: '🍨', category: categories[5], price: 1.95},
-    {name: 'Cup Cake', emoji: '🧁', category: categories[5], price: 0.95},
-    {name: 'Custard', emoji: '🍮', category: categories[5], price: 2.95},
-    {name: 'Strawberry Shortcake', emoji: '🍰', category: categories[5], price: 3.95},
-    {name: 'Milk', emoji: '🥛', category: categories[6], price: 0.95},
-    {name: 'Coffee', emoji: '☕', category: categories[6], price: 0.95},
-    {name: 'Mai Tai', emoji: '🍹', category: categories[6], price: 8.95},
-    {name: 'Beer', emoji: '🍺', category: categories[6], price: 3.95},
-    {name: 'Wine', emoji: '🍷', category: categories[6], price: 7.95},
+    // Rolls
+    { name: 'California Roll', emoji: '🍣', category: categories[0], price: 6.95 },
+    { name: 'Spicy Tuna Roll', emoji: '🌶️', category: categories[0], price: 7.95 },
+    { name: 'Salmon Avocado Roll', emoji: '🥑', category: categories[0], price: 8.95 },
+    { name: 'Dragon Roll', emoji: '🐉', category: categories[0], price: 12.95 },
+    { name: 'Rainbow Roll', emoji: '🌈', category: categories[0], price: 11.95 },
+    
+    // Nigiri
+    { name: 'Salmon Nigiri', emoji: '🍣', category: categories[1], price: 4.50 },
+    { name: 'Tuna Nigiri', emoji: '🍣', category: categories[1], price: 4.95 },
+    { name: 'Shrimp Nigiri', emoji: '🍤', category: categories[1], price: 4.25 },
+    { name: 'Eel Nigiri', emoji: '🐟', category: categories[1], price: 5.25 },
+    { name: 'Yellowtail Nigiri', emoji: '🍣', category: categories[1], price: 5.50 },
+    
+    // Bowls & Bento
+    { name: 'Chicken Teriyaki Bowl', emoji: '🍱', category: categories[2], price: 11.95 },
+    { name: 'Salmon Poke Bowl', emoji: '🍚', category: categories[2], price: 12.95 },
+    { name: 'Beef Bulgogi Bowl', emoji: '🥩', category: categories[2], price: 13.95 },
+    { name: 'Chirashi Bowl', emoji: '🍣', category: categories[2], price: 15.95 },
+    
+    // Sides
+    { name: 'Miso Soup', emoji: '🥣', category: categories[3], price: 2.50 },
+    { name: 'Edamame', emoji: '🫛', category: categories[3], price: 3.95 },
+    { name: 'Seaweed Salad', emoji: '🥗', category: categories[3], price: 3.95 },
+    { name: 'Gyoza (6pc)', emoji: '🥟', category: categories[3], price: 5.95 },
+    { name: 'Tempura Vegetables', emoji: '🥦', category: categories[3], price: 6.95 },
+    
+    // Desserts
+    { name: 'Mochi Ice Cream', emoji: '🍡', category: categories[4], price: 3.95 },
+    { name: 'Dorayaki', emoji: '🥞', category: categories[4], price: 4.50 },
+    { name: 'Matcha Cheesecake', emoji: '🍰', category: categories[4], price: 5.95 },
+    
+    // Drinks
+    { name: 'Green Tea', emoji: '🍵', category: categories[5], price: 1.95 },
+    { name: 'Ramune', emoji: '🧋', category: categories[5], price: 2.95 },
+    { name: 'Sake', emoji: '🍶', category: categories[5], price: 6.95 },
+    { name: 'Japanese Beer', emoji: '🍺', category: categories[5], price: 4.95 },
   ]);
 
-  console.log(items)
+  console.log(`✅ Created ${categories.length} categories`);
+  console.log(`✅ Created ${items.length} menu items`);
+  console.log('🍣 Sushi & Sides database seeded successfully!');
 
   process.exit();
-
 })();
