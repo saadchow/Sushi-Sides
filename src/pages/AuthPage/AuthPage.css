@@ -9,3 +9,18 @@
   gap: 32px;
   padding: 32px;
 }
+
+.AuthPage h3 {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 2vmin;
+  transition: color 0.2s ease;
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+}
+
+.AuthPage h3:hover {
+  color: var(--primary);
+}
